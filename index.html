@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="wabtech_logo.png" alt="Wabtech Logo" class="logo">
+        </header>
+        <main>
+            <h1>Age Calculator</h1>
+            <div class="calculator">
+                <div class="input-group">
+                    <label for="birthdate">Birthdate:</label>
+                    <input type="text" id="birthdate" required aria-label="Birthdate" aria-describedby="birthdate-desc">
+                    <div id="birthdate-desc" hidden>Enter your birthdate in YYYY-MM-DD format.</div>
+                </div>
+
+                <button onclick="calculateAge()">Calculate</button>
+
+                <div id="result"></div>
+
+                <div id="saved-birthdays">
+                    <h2>Saved Birthdays</h2>
+                    <ul id="birthday-list"></ul>
+                </div>
+
+                <button onclick="saveBirthday()">Save Birthday</button>
+                <button onclick="clearBirthdays()">Clear Birthdays</button>
+
+            </div>
+            <h2><a href="age_calc.html">Advance</a></h2>
+        </main>
+        <footer>
+            <p>&copy; 2025 Wabtech</p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>

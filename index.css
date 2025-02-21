@@ -1,0 +1,124 @@
+/* style.css */
+/* ... (Existing CSS) ... */
+
+
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif; /* Choose a modern font */
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 400px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 200px; /* Adjust logo size */
+    height: auto;
+}
+
+main {
+    flex: 1; /* Allow main content to take up available space */
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Example color */
+    margin-bottom: 20px;
+}
+
+/* .calculator { */
+    /* Style the calculator section */
+/* } */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: calc(100% - 18px); /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light background for footer */
+    border-top: 1px solid #ddd;
+}
+
+#saved-birthdays {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#birthday-list {
+    list-style: none;
+    padding: 0;
+}
+
+#birthday-list li {
+    margin-bottom: 5px;
+}
+
+#birthday-list button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #f44336; /* Example color for delete button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}

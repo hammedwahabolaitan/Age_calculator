@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Age Calculator</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+#calculator {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px; /* Adjust width as needed */
+  margin: 0 auto; /* Center the calculator */
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div id="calculator">
+  <h2>Age Calculator</h2>
+  <label for="birthYear">Year:</label>
+  <input type="number" id="birthYear" min="1900" max="2099" required>
+  <label for="birthMonth">Month:</label>
+  <input type="number" id="birthMonth" min="1" max="12" required>
+  <label for="birthDay">Day:</label>
+  <input type="number" id="birthDay" min="1" max="31" required>
+  <button onclick="calculateAge()">Calculate</button>
+  <div id="result"></div>
+</div>
+
+<script>
+function calculateAge() {
+  const birthYear = document.getElementById("birthYear").value;
+  const birthMonth = document.getElementById("birthMonth").value;
+  const birthDay = document.getElementById("birthDay").value;
+
+  const birthDate = new Date(birthYear, birthMonth - 1, birthDay); // Month is 0-indexed
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let month = today.getMonth() - birthDate.getMonth();
+  let day = today.getDate() - birthDate.getDate();
+
+
+  if (month < 0 || (month === 0 && day < 0)) {
+    age--;
+    month = (12 + month) % 12; // Handle negative months
+    if (day < 0) {
+        let lastDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        day = lastDayOfMonth + day;
+        month--; //account for month change
+        if(month < 0){
+            month = 11;
+        }
+    }
+  }
+
+  const resultDiv = document.getElementById("result");
+  resultDiv.textContent = `Your age is ${age} years, ${month} months and ${day} days.`;
+}
+</script>
+
+</body>
+</html>
